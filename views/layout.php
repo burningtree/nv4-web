@@ -24,7 +24,7 @@ foreach($this->data->pages as $page) {
 ?>
 
 <div class="page" id="page-<?=$i?>">
-  <div style="display: none;">
+  <div style="display: none; width: 100%;">
   <?=page_header($i==1, render_lang($this->lang, $page->header, $page->header_cz), $this->lang, $i)?>
   <div class="center">
     <div class="inner">

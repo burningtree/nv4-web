@@ -1,5 +1,5 @@
-.page { font-size: 22px; height: 900px; width: auto; /*border-bottom: 5px solid black;*/ background: #EDCD17; color: white; text-align: center; position: relative; }
-body { padding: 0; margin: 0; position: relative; font-family: Helvetica,Arial; }
+.page { font-size: 22px; height: 900px; width: 100%; /*border-bottom: 5px solid black;*/ background: #EDCD17; color: white; text-align: center; position: relative; }
+body { padding: 0; margin: 0; position: relative; font-family: Helvetica,Arial; width: 100%; -webkit-text-size-adjust: none; }
 
 .lang { position: absolute; top: 0px; left: 0px; font-size: 18px; height: 45px; width: 300px; text-align: left; padding: 35px 0 0 40px; font-weight: bold; }
 
