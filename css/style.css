@@ -1,7 +1,7 @@
 .page { font-size: 22px; height: 900px; width: auto; /*border-bottom: 5px solid black;*/ background: #EDCD17; color: white; text-align: center; position: relative; }
 body { padding: 0; margin: 0; position: relative; font-family: Helvetica,Arial; }
 
-.lang { position: absolute; top: 35px; left: 0px; font-size: 18px; height: 30px; width: 300px; text-align: left; padding-left: 40px; font-weight: bold; }
+.lang { position: absolute; top: 0px; left: 0px; font-size: 18px; height: 45px; width: 300px; text-align: left; padding: 35px 0 0 40px; font-weight: bold; }
 
 .center { text-align: center; width: 100%; height: 740px; display: table; }
 .inner { display: table-cell; vertical-align: middle; }

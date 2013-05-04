@@ -7,7 +7,12 @@
 	<link rel="stylesheet" type="text/css" href="css/font/stylesheet.css" media="screen" /> 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <meta name="description" content="<?= $this->data->description ?>" />
+  <meta name="author" content="Jan Stránský <jan.stransky@arnal.cz>">
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta property="og:title" content="<?= $this->data->title ?>"/> 
+  <meta property="og:url" content="http://nv4.neoviolence.net"/> 
+  <meta property="og:description" content="<?= $this->data->description ?>"/> 
+  <meta property="og:image" content="http://nv4.neoviolence.net/public/poster.png"/> 
 </head>
 <body>
 <script>
