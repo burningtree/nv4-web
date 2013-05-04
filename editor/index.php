@@ -1,6 +1,6 @@
 <?php
 
-$file = "./data.json";
+$file = "../data.json";
 if(isset($_POST) && isset($_POST['description'])){
 
   $encoded = json_encode($_POST, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
