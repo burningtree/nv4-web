@@ -79,8 +79,19 @@ function page_footer($final=FALSE, $txt=NULL){
   $class = $final ? '' : 'active';
   return <<<EOF
   <div class="footer $class">
-    <div class="text">$txt</div>
-    <div class="ico">$symbol</div>
+    <div class="footlinks">
+      <a href="#registration" onclick="scrollToPage(1, true);return false;">Registrace</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="#video" onclick="scrollToPage(2, true); return false;">Video</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="#lineup" onclick="scrollToPage(4, true); return false;">Lineup</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="#info" onclick="scrollToPage(5, true); return false;">Info</a>
+    </div>
+    <div class="next">
+      <div class="text">$txt</div>
+      <div class="ico">$symbol</div>
+    </div>
   </div>
 EOF;
 }

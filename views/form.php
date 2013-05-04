@@ -11,20 +11,19 @@
       <table class="table">
         <tr class="reg-row">
           <td class="reg-col title"><?= $this->name ?></td>
-          <td class="reg-col long" colspan="6"><input type"text" name="name" /></td>
+          <td class="reg-col long" colspan="6"><input type="text" name="name" /></td>
         </tr>
         <tr class="reg-row">
           <td class="reg-col title"><?= $this->email ?></td>
-          <td class="reg-col long" colspan="6"><input type"text" name="email" /></td>
+          <td class="reg-col long" colspan="6"><input type="text" name="email" /></td>
         </tr>
         <tr class="reg-row">
           <td class="reg-col title"><?= $this->tickets ?><input type="hidden" name="tickets" value=""></td>
             <? for($i=1;$i<=5; $i++): ?>
             <td class="reg-col tcol"><?=$i?></td>
-            </td>
             <? endfor ?>
           <td class="reg-col"><?= $this->number_tickets ?></td>
-        </td>
+        </tr>
       </table>
     </div>
     <button type="submit" id="send_form" class="fonted big2"><?= $this->send_now ?></button>

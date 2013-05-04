@@ -26,6 +26,14 @@
         },
         {
             "name": "start",
+            "header": "XX",
+            "header_cz": "XX",
+            "footer": "XX",
+            "view": "video",
+            "view_data": []
+        },
+        {
+            "name": "title",
             "header": "Make registration here",
             "header_cz": "Zde se můžete zaregistrovat",
             "footer": "More information soon",

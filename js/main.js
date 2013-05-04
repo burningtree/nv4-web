@@ -1,5 +1,7 @@
 var currentPage = 1;
 var borderHeight = $('.page .footer').height();
+var scrollBuffer = 0;
+var detecting = true;
 
 function isTouchDevice() {
   return !!('ontouchstart' in window) // works on most browsers 
@@ -20,6 +22,11 @@ function changePageHeight(){
 
   pageHeight = height;
   scrollToPage(currentPage);
+
+  var minimumVideoWidth = 600;
+  var videoRate = 854/480;
+  var videoWidth = $(window).width() > minimumVideoWidth ? $(window).width()-200 : minimumVideoWidth;
+  $('#video').css({ width: videoWidth, height: videoWidth/videoRate });
 }
 
 function scrollToPageOffset(offset, callback){
@@ -29,11 +36,13 @@ function scrollToPageOffset(offset, callback){
 
 function scrollToPage(page, animate, callback){
   var target = "#"+pagesMap[page];
+  detecting = false;
 
   if($(target).size() > 0){
     var offset = $(target).offset().top;
     console.log("Scrolling to page: "+page);
     if(animate){
+      detecting = false;
       //$('.footer.active, .header.active').addClass('shaded');
       $('html,body').animate({
         scrollTop: offset
@@ -41,9 +50,11 @@ function scrollToPage(page, animate, callback){
         //$('.footer.active, .header.active').removeClass('shaded');
         if(callback){ callback(); }
         setCurrentPage(page);
+        detecting = true;
       });
     } else {
       $('html,body').scrollTop(offset);
+      detecting = true;
       if(callback){ callback(); }
     }
     //currentPage = page;
@@ -55,19 +66,28 @@ function setCurrentPage(page){
   window.location.hash = pagesMap[page];
 }
 
-function detectPage(){
-  console.log('detecting page.. current page:'+currentPage);
+function detectPage(set, move){
+  //console.log('detecting page.. current page:'+currentPage+' ['+pagesMap[currentPage]+']');
   var position = $(window).scrollTop();
-  console.log('position: '+position);
-  var updatePage = Math.round(position/pageHeight)+1;
+  //console.log('position: '+position);
+  var realUpdate = position/pageHeight;
+  var updatePage = Math.round(realUpdate)+1;
   if(currentPage != updatePage){
     console.log('Setting page to: '+updatePage);
     currentPage = updatePage;
+  }
+  if(set){
+    /*if(realUpdate % 1 < 0.1){
+      console.log('### Forcing page to: '+updatePage);
+      window.location.hash = pagesMap[currentPage];
+    }*/
   }
 }
 
 function fade_in_pages(){
     $('div.page > div').fadeIn(function(){
+
+      detectPage(true, true);
       if(isTouchDevice()){
         $('.header, .footer').css({ opacity: 1 });
       }
@@ -97,7 +117,12 @@ $(document).ready(function(){
     changePageHeight();
   });
 
-  $(document).scroll(function(){ detectPage(); });
+  $(document).scroll(function(){ 
+    if(scrollBuffer % 10 == 0){
+      if(detecting) detectPage(true, false);
+    }
+    scrollBuffer++;
+  });
   $(document).keydown(function(e){
     if(e.keyCode == 38){ scrollToPageOffset(-1); return false; }
     if(e.keyCode == 40){ scrollToPageOffset(+1); return false; }
@@ -107,11 +132,17 @@ $(document).ready(function(){
     var page = parseInt($(this).parent().parent().attr('data-page'));
     scrollToPage(page-1, true);
   });
-  $('.footer.active').bind('click',function(){
+  $('.footer.active .next').bind('click',function(){
     console.log('click!');
-    var page = parseInt($(this).parent().parent().attr('data-page'));
+    var page = parseInt($(this).parent().parent().parent().attr('data-page'));
     console.log(page);
     scrollToPage(page+1, true);
+  });
+
+  $('.page').bind('mouseenter', function(){
+        $('.footer.active, .header.active', this).animate({ opacity: 1 });
+  }).bind('mouseleave', function(){
+        $('.footer.active, .header.active', this).animate({ opacity: 0 });
   });
 
 });
