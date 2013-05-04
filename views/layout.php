@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?= $data->title ?></title>
+	<title><?= $this->data->title ?></title>
   <link rel="stylesheet" type="text/css" href="css/reset.css" charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" /> 
 	<link rel="stylesheet" type="text/css" href="css/font/stylesheet.css" media="screen" /> 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-  <meta name="description" content="<?= $data->description ?>" />
+  <meta name="description" content="<?= $this->data->description ?>" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 </head>
 <body>
