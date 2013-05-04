@@ -1,5 +1,5 @@
 var currentPage = 1;
-var borderHeight = $('#page-1 .footer').height();
+var borderHeight = $('.page .footer').height();
 
 function isTouchDevice() {
   return !!('ontouchstart' in window) // works on most browsers 
@@ -25,9 +25,10 @@ function changePageHeight(){
 function scrollToPageOffset(offset, callback){
   var targetPage = (currentPage+offset);
   scrollToPage(targetPage, true, callback);
-};
+}
+
 function scrollToPage(page, animate, callback){
-  var target = '#page-'+page;
+  var target = "#"+pagesMap[page];
 
   if($(target).size() > 0){
     var offset = $(target).offset().top;
@@ -51,7 +52,7 @@ function scrollToPage(page, animate, callback){
 
 function setCurrentPage(page){
   currentPage = page;
-  window.location.hash = 'page-'+currentPage;
+  window.location.hash = pagesMap[page];
 }
 
 function detectPage(){
@@ -62,12 +63,10 @@ function detectPage(){
   if(currentPage != updatePage){
     console.log('Setting page to: '+updatePage);
     currentPage = updatePage;
-    //window.location.hash = 'page-'+currentPage;
   }
 }
 
 function fade_in_pages(){
-    console.log(currentPage);
     $('div.page > div').fadeIn(function(){
       if(isTouchDevice()){
         $('.header, .footer').css({ opacity: 1 });
@@ -81,7 +80,6 @@ $(document).ready(function(){
 
   setTimeout(function(){
 
-    console.log(window.location.hash);
     if(window.location.hash == ''){
       scrollToPage(2, false, function(){
        // $('.footer.active, .header.active').animate({ opacity: 100 }, 2000);
@@ -92,7 +90,8 @@ $(document).ready(function(){
       fade_in_pages();
     }
   }, 100);
-  
+
+
   $(window).resize(function(){
     console.log('windows resized!');
     changePageHeight();
@@ -105,13 +104,14 @@ $(document).ready(function(){
   });
   $('.header.active').bind('click',function(){ 
     console.log('click!');
-    var page = parseInt($(this).parent().parent().attr('id').match(/page-(\d+)/)[1]);
+    var page = parseInt($(this).parent().parent().attr('data-page'));
     scrollToPage(page-1, true);
   });
   $('.footer.active').bind('click',function(){
     console.log('click!');
-    var page = parseInt($(this).parent().parent().attr('id').match(/page-(\d+)/)[1]);
+    var page = parseInt($(this).parent().parent().attr('data-page'));
     console.log(page);
     scrollToPage(page+1, true);
   });
+
 });

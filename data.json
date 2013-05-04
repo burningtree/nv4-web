@@ -3,6 +3,7 @@
     "description": "Párty přes den venku na střeše a večer v klubu.  DJs: Schwa (Beef Rec.; BE AT) Milan Kroutil (La Bella Vida) Layup (Endless Illusion) Fatty M (Flow) Dscdrmr (142bpm) dMIT.RY (Neo Violence) Denoir (Funk'd Up) Více info brzy - zatím zvi kámoše!",
     "pages": [
         {
+            "name": "registration",
             "header": "Please note that we have limited capacity",
             "header_cz": "Kapacita je omezená",
             "footer": "Back to startscreen",
@@ -24,12 +25,14 @@
             }
         },
         {
+            "name": "start",
             "header": "Make registration here",
             "header_cz": "Zde se můžete zaregistrovat",
             "footer": "More information soon",
             "content": "<div class=\"chead fonted\">Rooftop Party<br>Day'n'Night Celebration</div>\r\n  <h1 class=\"big fonted\">NeoViolence\r\n  <br>[4th Anniversary](/)\r\n  <br>25th May 2013\r\n  <br>[Kokpit](http://kokpitkafe.tumblr.com/)</h1>"
         },
         {
+            "name": "lineup",
             "header": "Back to startscreen",
             "footer": "Looking forward to your visit",
             "view": "djs",
@@ -39,6 +42,7 @@
             "content": "<div class=\"fonted\"></div>"
         },
         {
+            "name": "info",
             "header": "text",
             "footer": "text",
             "view": "twocolumn",

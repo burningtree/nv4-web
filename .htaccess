@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^(cz|en)(.*)$ /index.php?lang=$1 [L,QSA]

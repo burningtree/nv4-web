@@ -8,6 +8,7 @@ function render_replate($template, $vars, $all, $lang){
 
   $fn = './views/'.$template.'.php';
   $tpl = new Savant3();
+  $tpl->lang = $lang;
   foreach($vars as $k=>$v)
   {
     $czkey = $k.'_cz';
@@ -40,7 +41,7 @@ function render_lang($lang, $content_en, $content_cz)
   return $content_en;
 }
 
-function page_header($final=FALSE, $txt=NULL, $lang='en', $i = 0){
+function page_header($final=FALSE, $txt=NULL, $lang='en', $i = 0, $page_data){
   $symbol = $final ? '&#9661;' : '&#9650;';
   $class = $final ? '' : 'active';
 
@@ -48,16 +49,17 @@ function page_header($final=FALSE, $txt=NULL, $lang='en', $i = 0){
     case 'cz':
       $lang_name = 'English';
       $lang_out = 'en';
+      $lang_url = '/';
       break;
     case 'en':
       $lang_name = 'Česky';
-      $lang_out = 'cz';
+      $lang_url = '/cz/';
       break;
   }
 
   return <<<EOF
   <div class="lang">
-    <a href="?lang=$lang_out#page-$i">$lang_name</a>&nbsp;&nbsp;&nbsp;
+    <a href="$lang_url#$page_data->name">$lang_name</a>&nbsp;&nbsp;&nbsp;
     <a href="http://www.facebook.com/events/142243002620793/">Facebook</a>
   </div>
   <div class="header $class">

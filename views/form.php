@@ -6,7 +6,7 @@
 <? else: ?>
 
   <div class="form">
-    <form id="reg-form" action="#page-1" method="POST">
+    <form id="reg-form" action="/<?= ($this->lang == 'en' ? '' : 'cz/') ?>#page-1" method="POST">
     <div class="reg">
       <table class="table">
         <tr class="reg-row">

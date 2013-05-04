@@ -2,9 +2,9 @@
 <html>
 <head>
 	<title><?= $this->data->title ?></title>
-  <link rel="stylesheet" type="text/css" href="css/reset.css" charset="utf-8" />
-	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" /> 
-	<link rel="stylesheet" type="text/css" href="css/font/stylesheet.css" media="screen" /> 
+  <link rel="stylesheet" type="text/css" href="/css/reset.css" charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" /> 
+	<link rel="stylesheet" type="text/css" href="/css/font/stylesheet.css" media="screen" /> 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <meta name="description" content="<?= $this->data->description ?>" />
   <meta name="author" content="Jan Stránský <jan.stransky@arnal.cz>">
@@ -23,9 +23,9 @@ $i = 1;
 foreach($this->data->pages as $page) { 
 ?>
 
-<div class="page" id="page-<?=$i?>">
+<div class="page" id="<?=$page->name?>" data-page="<?=$i?>">
   <div style="display: none; width: 100%;">
-  <?=page_header($i==1, render_lang($this->lang, $page->header, $page->header_cz), $this->lang, $i)?>
+  <?=page_header($i==1, render_lang($this->lang, $page->header, $page->header_cz), $this->lang, $i, $page)?>
   <div class="center">
     <div class="inner">
       <?= isset($page->view) ? render_replate($page->view, $page->view_data, $this->all, $this->lang) : render_content(render_lang($this->lang, $page->content, $page->content_cz), TRUE) ?>
@@ -41,6 +41,7 @@ $i++;
 ?>
 
 <script>
+  var pagesMap = <?= json_encode($this->pages_map) ?>;
   <?=file_get_contents("./js/main.js")?>
 </script>
 <script>

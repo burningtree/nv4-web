@@ -36,10 +36,18 @@ if(isset($_POST['name']) && isset($_POST['email'])){
   $all['form_send'] = TRUE;
 }
 
+$pages_map = array();
+$i = 1;
+foreach($data->pages as $p){
+  $pages_map[$i] = $p->name;
+  $i++;
+}
+
 $layout_file = './views/layout.php';
 $layout = new Savant3();
 $layout->data = $data;
 $layout->lang = $lang;
+$layout->pages_map = $pages_map;
 $layout->all = $all;
 $layout->display($layout_file);
 
