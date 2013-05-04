@@ -1,4 +1,4 @@
   AuthType Basic
   AuthName "Authentication Required"
-  AuthUserFile "/data/neoviolence.com/www/ann/editor/.htpasswd"
+  AuthUserFile "/data/neoviolence.com/nv4/editor/.htpasswd"
   Require valid-user
