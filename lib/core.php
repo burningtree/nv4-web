@@ -46,17 +46,6 @@ function page_header($final=FALSE, $txt=NULL, $lang='en', $i = 0, $page_data, $a
   $symbol_class = $final ? 'up' : 'upfill';
   $class = $final ? '' : 'active';
 
-  switch($lang){
-    case 'cz':
-      $lang_name = 'English';
-      $lang_out = 'en';
-      $lang_url = '/';
-      break;
-    case 'en':
-      $lang_name = 'Česky';
-      $lang_url = '/cz/';
-      break;
-  }
 
   $footlinks = explode(",", $all_datas->footlinks);
   $footlinks = array_map(function($x){ return trim($x); }, $footlinks);
@@ -80,10 +69,6 @@ function page_header($final=FALSE, $txt=NULL, $lang='en', $i = 0, $page_data, $a
   $fl_out = join("&nbsp;&nbsp;&nbsp;\n", $fl_out);
 
   return <<<EOF
-  <div class="lang">
-    <a href="$lang_url#$page_data->name">$lang_name</a>&nbsp;&nbsp;&nbsp;
-    <a href="http://www.facebook.com/events/142243002620793/">Facebook</a>
-  </div>
   <div class="footlinks">
     $fl_out
   </div>
@@ -104,7 +89,6 @@ function page_footer($final=FALSE, $txt=NULL){
   $symbol_class = $final ? 'down' : 'downfill';
   $class = $final ? '' : 'active';
   return <<<EOF
-  <div class="nvlogo"></div>
   <div class="footer $class">
     <div class="next">
       <div class="text">$txt</div>

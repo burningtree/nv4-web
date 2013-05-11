@@ -10,6 +10,7 @@ function isTouchDevice() {
 
 function changePageHeight(){
   var height = $(window).height();
+  var width = $(window).width();
   var minimumHeight = 700;
 
   if(height < minimumHeight){
@@ -17,8 +18,10 @@ function changePageHeight(){
   }
 
   console.log('window height: '+height);
+  $('.bg').css({ backgroundSize: '2053px '+(height*(pagesCount-1))+'px' });
   $('.page').css({ height: height });
   $('.center').css({ height: height-(borderHeight*2) });
+
 
   pageHeight = height;
   scrollToPage(currentPage);
@@ -42,12 +45,14 @@ function scrollToPage(page, animate, callback){
     var offset = $(target).offset().top;
     console.log("Scrolling to page: "+page);
     if(animate){
+      //$('#mainframe > .bg').trigger('freeze');
       detecting = false;
       //$('.footer.active, .header.active').addClass('shaded');
       $('html,body').animate({
         scrollTop: offset
       }, 500, function(){
         //$('.footer.active, .header.active').removeClass('shaded');
+        setTimeout(function(){ $('#mainframe > .bg').trigger('unfreeze').trigger('mousemove'); }, 1500);
         if(callback){ callback(); }
         setCurrentPage(page);
         detecting = true;
@@ -85,7 +90,9 @@ function detectPage(set, move){
 }
 
 function fade_in_pages(){
+    //$('.page').removeClass('nonbg').css({ opacity: 0 }).animate({ opacity: 1 });
     $('.page').removeClass('nonbg');
+    $('#mainframe .bg').fadeIn();
     $('div.page > div').fadeIn(function(){
 
       detectPage(true, true);
@@ -119,6 +126,8 @@ $(document).ready(function(){
   });
 
   $(document).scroll(function(){ 
+    var access = false;
+
     if(scrollBuffer % 10 == 0){
       if(detecting) detectPage(true, false);
     }
@@ -149,5 +158,13 @@ $(document).ready(function(){
     document.location = 'http://www.facebook.com/neo.violence';
     return false;
   });
+
+  var mainFrame = $('#mainframe');
+  var bg = mainFrame.children('.bg');
+
+  /*bg.parallax(
+    { mouseport: mainFrame, frameDuration: 50 },
+    { xparallax: 0.3, yparallax: 0.8 }
+  );*/
 
 });

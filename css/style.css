@@ -1,12 +1,12 @@
-.page { font-size: 22px; height: 900px; width: 100%; /*border-bottom: 5px solid black;*/ background: #EDCD17; color: white; text-align: center; position: relative; }
+.page { font-size: 22px; height: 900px; width: 100%; /*border-bottom: 5px solid black; background: #EDCD17;*/ color: white; text-align: center; position: relative; }
 body { padding: 0; margin: 0; position: relative; font-family: Helvetica,Arial; width: 100%; -webkit-text-size-adjust: none; }
 
-.lang, .footlinks { position: absolute; top: 0px; font-size: 13px; height: 45px; width: 300px; text-align: left; padding: 30px 0 0 35px; font-weight: bold; height: 50px; }
+.lang, .footlinks { position: absolute; top: 0px; font-size: 13px; height: 45px; width: 300px; text-align: left; padding: 30px 0 0 35px; font-weight: bold; height: 50px; z-index: 1; }
 
-.lang { left: 0px; }
+.lang { left: 0px; position: fixed; }
 .footer { position: relative;  }
 .footlinks { right: 0px; width: 450px; padding: 30px 35px 0 0; text-align: right !important; }
-.nvlogo { position: absolute; left: 0px; bottom: 0px; margin: 0 0 30px 35px; width: 141px; height: 92px; background: url(/public/nv-logo.png) no-repeat; cursor: pointer; z-index: 1; }
+.nvlogo { position: fixed; left: 0px; bottom: 0px; margin: 0 0 30px 35px; width: 141px; height: 92px; background: url(/public/nv-logo.png) no-repeat; cursor: pointer; z-index: 1; }
 
 .center { text-align: center; width: 100%; height: 740px; display: table; }
 .inner { display: table-cell; vertical-align: middle; }
@@ -20,14 +20,14 @@ a { color: white !important; text-decoration: underline !important; }
 /*a:hover, button:hover { color: black !important; }*/
 .chead { padding-bottom: 50px; font-size: 13px; line-height: 25px; }
 
-.page { background: url(/public/bg.png) no-repeat center 0px black; }
+/*.page { background: url(/public/bg.png) no-repeat center 0px black; }
 .page.num-1 { background-position: center 500px; }
 .page.num-2 { background-position: center -100px; }
 .page.num-3 { background-position: center -700px; }
 .page.num-4 { background-position: center -1400px; }
 .page.num-5 { background-position: center -1800px; }
 .page.num-6 { background-position: center -2000px; }
-.page.nonbg { background: black; }
+.page.nonbg { background: black; }*/
 
 .page .footer, .page .header { font-size: 13px; font-weight: bold; height: 80px; display: inline-block; width: 400px; }
 .footer .ico, .header .ico { font-size: 45px; padding: 10px 0; }
@@ -74,4 +74,7 @@ a { color: white !important; text-decoration: underline !important; }
 .twocolumn .left, .twocolumn .right { float: left; width: 450px; padding: 10px; text-align: left; }
 
 hr { border: 1px solid white; border-bottom: 0; margin: 10px 0; }
+
+#mainframe { position: relative; width: 100%; height: 100%; background: black; }
+#mainframe .bg { display:none; background: url(/public/bg.png) no-repeat black center; width: 100%; height: 100%; position: absolute; z-index: 0; background-position: center; }
 

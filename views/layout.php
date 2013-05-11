@@ -6,7 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" /> 
 	<link rel="stylesheet" type="text/css" href="/css/font/stylesheet.css" media="screen" /> 
   <link rel="icon" type="image/ico" href="/favicon.ico" />
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script src="/js/jquery.parallax.min.js"></script>
   <meta name="description" content="<?= $this->data->description ?>" />
   <meta name="author" content="Jan Stránský <jan.stransky@arnal.cz>">
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -16,8 +17,29 @@
   <meta property="og:image" content="http://nv4.neoviolence.net/public/poster.png"/> 
 </head>
 <body>
-<script>
-</script>
+
+<div id="mainframe" class="parallax-port">
+  <div class="bg parallax-layer">Loading..</div>
+  <div class="nvlogo"></div>
+
+<?php
+  switch($this->lang){
+    case 'cz':
+      $lang_name = 'English';
+      $lang_out = 'en';
+      $lang_url = '/';
+      break;
+    case 'en':
+      $lang_name = 'Česky';
+      $lang_url = '/cz/';
+      break;
+  }
+?>
+
+  <div class="lang">
+    <a href="<?= $lang_url ?>#<?= $page_data->name ?>" onclick="document.location='<?=$lang_url?>'+document.location.hash; return false;"><?=$lang_name?></a>&nbsp;&nbsp;&nbsp;
+    <a href="http://www.facebook.com/events/142243002620793/">Facebook</a>
+  </div>
 
 <?
 $i = 1;
@@ -40,8 +62,12 @@ foreach($this->data->pages as $page) {
 $i++; 
 } 
 ?>
+</div>
 
 <script>
+  <?//=file_get_contents("./js/jquery.parallax.min.js")?>
+
+  var pagesCount = <?= count($this->pages_map) ?>;
   var pagesMap = <?= json_encode($this->pages_map) ?>;
   <?=file_get_contents("./js/main.js")?>
 </script>
