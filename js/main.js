@@ -85,6 +85,7 @@ function detectPage(set, move){
 }
 
 function fade_in_pages(){
+    $('.page').removeClass('nonbg');
     $('div.page > div').fadeIn(function(){
 
       detectPage(true, true);
@@ -135,7 +136,6 @@ $(document).ready(function(){
   $('.footer.active .next').bind('click',function(){
     console.log('click!');
     var page = parseInt($(this).parent().parent().parent().attr('data-page'));
-    console.log(page);
     scrollToPage(page+1, true);
   });
 
@@ -143,6 +143,11 @@ $(document).ready(function(){
         $('.footer.active, .header.active', this).animate({ opacity: 1 });
   }).bind('mouseleave', function(){
         $('.footer.active, .header.active', this).animate({ opacity: 0 });
+  });
+
+  $('div.nvlogo').click(function(){
+    document.location = 'http://www.facebook.com/neo.violence';
+    return false;
   });
 
 });

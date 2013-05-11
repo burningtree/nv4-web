@@ -2,7 +2,8 @@
 
 require './lib/core.php';
 
-$reg_email = 'dmitrij.malysev@gmail.com';
+//$reg_email = 'dmitrij.malysev@gmail.com';
+$reg_email = 'jan.stransky@arnal.cz';
 
 $lang = isset($_GET['lang']) ? $_GET['lang'] : 'en';
 if(!in_array($lang, array('cz','en')))

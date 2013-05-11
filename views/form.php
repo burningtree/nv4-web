@@ -85,8 +85,8 @@
         data: $('#reg-form').serialize(), 
         success: function(html){
           console.log('got data!');
-          console.log(html);
-          $('#page-1 .inner').html($('.inner:first', html).html());
+          //console.log(html);
+          $('#registration.page .inner').html($('.inner:first', html).html());
         },
         dataType: 'html'
       });

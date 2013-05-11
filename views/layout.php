@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="/css/reset.css" charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" /> 
 	<link rel="stylesheet" type="text/css" href="/css/font/stylesheet.css" media="screen" /> 
+  <link rel="icon" type="image/ico" href="/favicon.ico" />
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <meta name="description" content="<?= $this->data->description ?>" />
   <meta name="author" content="Jan Stránský <jan.stransky@arnal.cz>">
@@ -23,9 +24,9 @@ $i = 1;
 foreach($this->data->pages as $page) { 
 ?>
 
-<div class="page" id="<?=$page->name?>" data-page="<?=$i?>">
+<div class="page num-<?=$i?> nonbg" id="<?=$page->name?>" data-page="<?=$i?>">
   <div style="display: none; width: 100%;">
-  <?=page_header($i==1, render_lang($this->lang, $page->header, $page->header_cz), $this->lang, $i, $page)?>
+  <?=page_header($i==1, render_lang($this->lang, $page->header, $page->header_cz), $this->lang, $i, $page, $this->data)?>
   <div class="center">
     <div class="inner">
       <?= isset($page->view) ? render_replate($page->view, $page->view_data, $this->all, $this->lang) : render_content(render_lang($this->lang, $page->content, $page->content_cz), TRUE) ?>
