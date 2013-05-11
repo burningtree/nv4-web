@@ -18,7 +18,7 @@ function changePageHeight(){
   }
 
   console.log('window height: '+height);
-  $('.bg').css({ backgroundSize: '2053px '+(height*(pagesCount-1))+'px' });
+  //$('.bg').css({ backgroundSize: '2053px '+(height*(pagesCount-1))+'px' });
   $('.page').css({ height: height });
   $('.center').css({ height: height-(borderHeight*2) });
 
@@ -28,13 +28,20 @@ function changePageHeight(){
 
   var minimumVideoWidth = 600;
   var videoRate = 854/480;
-  var videoWidth = $(window).width() > minimumVideoWidth ? $(window).width()-200 : minimumVideoWidth;
+  var videoWidth = $(window).width() > minimumVideoWidth ? $(window).width()-300 : minimumVideoWidth;
   $('#video').css({ width: videoWidth, height: videoWidth/videoRate });
+
+  resolveScroll();
 }
 
 function scrollToPageOffset(offset, callback){
   var targetPage = (currentPage+offset);
   scrollToPage(targetPage, true, callback);
+}
+
+function resolveScroll(){
+    var scrollTop = $(window).scrollTop();
+    $('#mainframe > div.bg').css({ backgroundPosition: "center "+((scrollTop*0.5)+500)+"px" });
 }
 
 function scrollToPage(page, animate, callback){
@@ -126,6 +133,8 @@ $(document).ready(function(){
   });
 
   $(document).scroll(function(){ 
+
+    resolveScroll();
     var access = false;
 
     if(scrollBuffer % 10 == 0){
