@@ -18,7 +18,7 @@ $data = json_decode(file_get_contents($file));
   .red td { color: red; }
 </style>
 
-<form action="editor.php" method="POST">
+<form action="/editor" method="POST">
 <table>
 
 <?
