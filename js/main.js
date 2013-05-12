@@ -29,7 +29,7 @@ function changePageHeight(){
   var minimumVideoWidth = 600;
   var videoRate = 854/480;
   var videoWidth = $(window).width() > minimumVideoWidth ? $(window).width()-300 : minimumVideoWidth;
-  $('#video').css({ width: videoWidth, height: videoWidth/videoRate });
+  $('#videobox').css({ width: videoWidth, height: videoWidth/videoRate });
 
   resolveScroll();
 }
@@ -115,8 +115,15 @@ $(document).ready(function(){
 
   setTimeout(function(){
 
+    var dp = "2";
+    for(pi in pagesMap){
+      if(pagesMap[pi] == defaultPage){
+        dp = pi;
+      }
+    }
+    console.log(dp);
     if(window.location.hash == ''){
-      scrollToPage(2, false, function(){
+      scrollToPage(dp, false, function(){
        // $('.footer.active, .header.active').animate({ opacity: 100 }, 2000);
         fade_in_pages();
       });

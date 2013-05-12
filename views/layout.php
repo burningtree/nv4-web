@@ -69,6 +69,7 @@ $i++;
 
   var pagesCount = <?= count($this->pages_map) ?>;
   var pagesMap = <?= json_encode($this->pages_map) ?>;
+  var defaultPage = <?= $this->data->default_page ?>;
   <?=file_get_contents("./js/main.js")?>
 </script>
 <script>
