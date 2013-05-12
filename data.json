@@ -12,8 +12,8 @@
             "name_cz": "rezervace",
             "header": "Please note that we have limited capacity",
             "header_cz": "Kapacita je omezená",
-            "footer": "Video",
-            "footer_cz": "Video",
+            "footer": "Start",
+            "footer_cz": "Start",
             "view": "form",
             "view_data": {
                 "congrats": "Thanks for reservation!",
@@ -32,7 +32,8 @@
         },
         {
             "name": "start",
-            "header": "Video",
+            "header": "Reservation",
+            "header_cz": "Reservation",
             "footer": "Line-up",
             "content": "<div class=\"chead\">Rooftop Party<br>Day'n'Night Celebration</div>\r\n  <h1 class=\"big fonted\">NeoViolence\r\n  <br>25th May 2013\r\n  <br>[Kokpit](http://kokpitkafe.tumblr.com/)</h1>"
         },
@@ -49,6 +50,7 @@
             "name": "info",
             "header": "Line-up",
             "footer": "Partners",
+            "footer_cz": "Partne&#345;i",
             "view": "twocolumn",
             "view_data": {
                 "left": "<hr>Čtvrté výročí sice nejsou žádné kulatiny, ale jelikož minulý rok se vůbec neslavilo, rozhodli jsme se to tentokrát krapet dohnat. A proto jsme se spojily s několika českými promotéry, abychom Vám společně připravili pestrý a extra prodloužený mejdan v neotřelém prostoru Kokpit Kafe. Přichystaný bude skvělý zvuk, rozmanité dj sety a spousta vychytávek pro Váš komfort a skvělý zážitek z party s přátelskou atmosférou a to jak uvnitř tak i venku - na střeše!<hr>Na pomoc jsme si přizvali několik zpřátelených promotéru, jelikož vicero hlav více dokáže. Do spolupráce se zapojily Beef Rec., Endless Illusion, 142bpm a Funk'd Up z čehož následně vykrystalizoval i line-up:<hr>Denoir (Funk'd Up)\r\ndMIT.RY (Neo Violence)\r\nDscdrmr (142bpm)\r\nFatty M (Flow)\r\nLayup (Endless Illusion)\r\nSchwa (Beef Rec.)\r\nSupport by Milan Kroutil<hr>",
@@ -62,7 +64,7 @@
             "name_cz": "Partneři",
             "header": "Info",
             "footer": "Looking forward to your visit!",
-            "footer_cz": "Looking forward to your visit!",
+            "footer_cz": null,
             "content": "<img src='/public/sponsors.png' />"
         }
     ]

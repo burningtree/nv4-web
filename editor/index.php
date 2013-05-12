@@ -18,6 +18,8 @@ $data = json_decode(file_get_contents($file));
   .red td { color: red; }
 </style>
 
+<a href="/editor">refresh</a>
+
 <form action="/editor/index.php" method="post">
 <table>
 
