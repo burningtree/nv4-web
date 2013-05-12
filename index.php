@@ -3,11 +3,12 @@
 require './lib/core.php';
 
 
-$lang = isset($_GET['lang']) ? $_GET['lang'] : 'en';
+$lang = isset($_GET['lang']) ? $_GET['lang'] : 'cz';
 if(!in_array($lang, array('cz','en')))
 {
   exit;
 }
+
 
 $data = json_decode(file_get_contents("./data.json"));
 if(!$data){

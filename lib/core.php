@@ -9,7 +9,7 @@ function render_replate($template, $vars, $all, $lang){
   $fn = './views/'.$template.'.php';
   $tpl = new Savant3();
   $tpl->lang = $lang;
-  foreach($vars as $k=>$v)
+  if(is_object($vars)) foreach($vars as $k=>$v)
   {
     $czkey = $k.'_cz';
     if($lang == 'cz' && isset($vars->$czkey)){
@@ -35,9 +35,10 @@ function render_content($content, $md=TRUE){
 
 function render_lang($lang, $content_en, $content_cz)
 {
-  if($lang == 'cz' && $content_cz != NULL)
+  if($lang == 'cz' && $content_cz != NULL){
     return $content_cz;
-  
+  }
+
   return $content_en;
 }
 
@@ -56,7 +57,7 @@ function page_header($final=FALSE, $txt=NULL, $lang='en', $i = 0, $page_data, $a
     $fli = 1;
     foreach($all_datas->pages as $p){
       if($p->name == $fl){
-        $fl_title = isset($p->name_cz) ? $p->name_cz : $p->name;
+        $fl_title = (isset($p->name_cz) && $lang=='cz') ? $p->name_cz : $p->name;
         $fl_id = $fli;
         break;
       }

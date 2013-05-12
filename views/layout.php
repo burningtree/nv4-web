@@ -27,18 +27,18 @@
     case 'cz':
       $lang_name = 'English';
       $lang_out = 'en';
-      $lang_url = '/';
+      $lang_url = '/en/';
       break;
     case 'en':
       $lang_name = 'Česky';
-      $lang_url = '/cz/';
+      $lang_url = '/';
       break;
   }
 ?>
 
   <div class="lang">
     <a href="<?= $lang_url ?>#<?= $page_data->name ?>" onclick="document.location='<?=$lang_url?>'+document.location.hash; return false;"><?=$lang_name?></a>&nbsp;&nbsp;&nbsp;
-    <a href="http://www.facebook.com/events/142243002620793/">Facebook</a>
+    <a href="http://www.facebook.com/events/142243002620793/"><?= render_lang($this->lang, $this->data->facebook_title, $this->data->facebook_title_cz)?></a>
   </div>
 
 <?

@@ -3,6 +3,8 @@
     "title": "NeoViolence 4th Anniversary 25th May 2013 - Kokpit",
     "footlinks": "registration, start, lineup, info, partners",
     "description": "Párty přes den venku na střeše a večer v klubu.  DJs: Schwa (Beef Rec.; BE AT) Milan Kroutil (La Bella Vida) Layup (Endless Illusion) Fatty M (Flow) Dscdrmr (142bpm) dMIT.RY (Neo Violence) Denoir (Funk'd Up) Více info brzy - zatím zvi kámoše!",
+    "facebook_title": "Facebook event",
+    "facebook_title_cz": "Facebook událost",
     "pages": [
         {
             "name": "registration",
@@ -33,15 +35,14 @@
             "header": "XX",
             "header_cz": "XX",
             "footer": "XX",
-            "view": "video",
-            "view_data": []
+            "view": "video"
         },
         {
             "name": "title",
             "header": "Make registration here",
             "header_cz": "Zde se můžete zaregistrovat",
             "footer": "More information soon",
-            "content": "<div class=\"chead fonted\">Rooftop Party<br>Day'n'Night Celebration</div>\r\n  <h1 class=\"big fonted\">NeoViolence\r\n  <br>[4th Anniversary](/)\r\n  <br>25th May 2013\r\n  <br>[Kokpit](http://kokpitkafe.tumblr.com/)</h1>"
+            "content": "<div class=\"chead\">Rooftop Party<br>Day'n'Night Celebration</div>\r\n  <h1 class=\"big fonted\">NeoViolence\r\n  <br>25th May 2013\r\n  <br>[Kokpit](http://kokpitkafe.tumblr.com/)</h1>"
         },
         {
             "name": "lineup",
@@ -65,11 +66,11 @@
             }
         },
         {
-          "name": "partners",
-          "name_cz": "Partneři",
-          "header": "text",
-          "footer": "text",
-          "content": "<img src='/public/sponsors.png' />"
+            "name": "partners",
+            "name_cz": "Partneři",
+            "header": "text",
+            "footer": "text",
+            "content": "<img src='/public/sponsors.png' />"
         }
     ]
 }

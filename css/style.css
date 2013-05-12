@@ -19,7 +19,7 @@ body { padding: 0; margin: 0; position: relative; font-family: Helvetica,Arial; 
 a { color: white !important; text-decoration: underline !important; }
 a:hover, button:hover { text-decoration: none !important; }
 /*a:hover, button:hover { color: black !important; }*/
-.chead { padding-bottom: 50px; font-size: 13px; line-height: 25px; }
+.chead { padding-bottom: 50px; font-size: 13px; line-height: 25px; font-weight: bold; }
 
 /*.page { background: url(/public/bg.png) no-repeat center 0px black; }
 .page.num-1 { background-position: center 500px; }
