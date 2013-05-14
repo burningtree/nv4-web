@@ -6,14 +6,16 @@
     "description": "Párty přes den venku na střeše a večer v klubu.  DJs: Schwa (Beef Rec.; BE AT) Milan Kroutil (La Bella Vida) Layup (Endless Illusion) Fatty M (Flow) Dscdrmr (142bpm) dMIT.RY (Neo Violence) Denoir (Funk'd Up) Více info brzy - zatím zvi kámoše!",
     "facebook_title": "Facebook event",
     "facebook_title_cz": "Facebook událost",
+    "help": "You can navigate using arrow keys &#9650; &#9660;",
+    "help_cz": "K navigaci můžete použít klávesy šipek &#9650; &#9660;",
     "pages": [
         {
             "name": "reservation",
             "name_cz": "rezervace",
             "header": "Please note that we have limited capacity",
             "header_cz": "Kapacita je omezená",
-            "footer": "Start",
-            "footer_cz": "Start",
+            "footer": "Video",
+            "footer_cz": "Video",
             "view": "form",
             "view_data": {
                 "congrats": "Thanks for reservation!",

@@ -64,8 +64,8 @@ function scrollToPageOffset(offset, callback){
 function resolveScroll(){
     var scrollTop = $(window).scrollTop();
     // konfigurace bg
-    var scrollTopOffset = 300; // 500 pri vice str
-    var scrollBgRatio = 0.3; // 0.5 pri vice str
+    var scrollTopOffset = 500; // 500 pri vice str
+    var scrollBgRatio = 0.4; // 0.5 pri vice str
     $('#mainframe > div.bg').css({ backgroundPosition: "center "+((scrollTop*scrollBgRatio)+scrollTopOffset)+"px" });
 }
 
@@ -121,12 +121,6 @@ function detectPage(set, move){
     //console.log('Setting page to: '+updatePage);
     currentPage = updatePage;
   }
-  if(set){
-    /*if(realUpdate % 1 < 0.1){
-      console.log('### Forcing page to: '+updatePage);
-      window.location.hash = pagesMap[currentPage];
-    }*/
-  }
 }
 
 function fade_in_pages(){
@@ -139,6 +133,12 @@ function fade_in_pages(){
       if(isTouchDevice()){
         $('.header, .footer').css({ opacity: 1 });
       }
+
+      $('#help').fadeIn(function(){
+        setTimeout(function(){
+          $('#help').fadeOut();
+        }, 5000);
+      });
     });
 }
 $(document).ready(function(){
@@ -207,13 +207,5 @@ $(document).ready(function(){
     document.location = 'http://www.facebook.com/neo.violence';
     return false;
   });
-
-  var mainFrame = $('#mainframe');
-  var bg = mainFrame.children('.bg');
-
-  /*bg.parallax(
-    { mouseport: mainFrame, frameDuration: 50 },
-    { xparallax: 0.3, yparallax: 0.8 }
-  );*/
 
 });

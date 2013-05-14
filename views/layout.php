@@ -20,6 +20,7 @@
 <div id="mainframe">
   <div class="bg"></div>
   <div class="nvlogo"></div>
+  <div id="help" style="display:none;"><p><?= render_lang($this->lang, $this->data->help, $this->data->help_cz) ?></p></div>
 
 <?php
   switch($this->lang){
