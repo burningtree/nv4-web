@@ -86,7 +86,7 @@ function sanity($txt){
 
 
 function page_footer($final=FALSE, $txt=NULL){
-  $symbol = $final ? '&#9651' : '&#9660;';
+  $symbol = $final ? '&#9651;' : '&#9660;';
   $symbol_class = $final ? 'down' : 'downfill';
   $class = $final ? '' : 'active';
   return <<<EOF

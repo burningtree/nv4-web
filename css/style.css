@@ -72,7 +72,7 @@ a:hover, button:hover { text-decoration: none !important; }
 #send_form { border: 0; background: transparent; cursor: pointer; text-decoration: underline; color: white; }
 
 .twocolumn { width: 1000px; display: inline-block; font-size: 13px; line-height: 20px; font-weight: bold; }
-.twocolumn .left, .twocolumn .right { float: left; width: 450px; padding: 10px; text-align: left; }
+.twocolumn .left, .twocolumn .right { float: left; width: 480px; padding: 10px; text-align: left; }
 
 hr { border: 1px solid white; border-bottom: 0; margin: 10px 0; }
 

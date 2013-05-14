@@ -1,8 +1,8 @@
 {
-    "default_page": "start",
+    "default_page": "video",
     "reg_email": "dmitrij.malysev@gmail.com",
     "title": "NeoViolence 4th Anniversary 25th May 2013 - Kokpit",
-    "footlinks": "reservation, start, line-up, info, partners",
+    "footlinks": "reservation, video, start, line-up, info, partners",
     "description": "Párty přes den venku na střeše a večer v klubu.  DJs: Schwa (Beef Rec.; BE AT) Milan Kroutil (La Bella Vida) Layup (Endless Illusion) Fatty M (Flow) Dscdrmr (142bpm) dMIT.RY (Neo Violence) Denoir (Funk'd Up) Více info brzy - zatím zvi kámoše!",
     "facebook_title": "Facebook event",
     "facebook_title_cz": "Facebook událost",
@@ -19,6 +19,7 @@
                 "congrats": "Thanks for reservation!",
                 "congrats_cz": "Děkujeme za rezervaci!",
                 "register_another": "Reserve more tickets",
+                "register_another_cz": "Koupit víc lupenů",
                 "name": "Name",
                 "name_cz": "Jméno",
                 "email": "E-mail",
@@ -31,11 +32,18 @@
             }
         },
         {
-            "name": "start",
+            "name": "video",
             "header": "Reservation",
-            "header_cz": "Reservation",
+            "header_cz": "Rezervace",
+            "footer": "Start",
+            "view": "video"
+        },
+        {
+            "name": "start",
+            "header": "Video",
+            "header_cz": "Video",
             "footer": "Line-up",
-            "content": "<div class=\"chead\">Rooftop Party<br>Day'n'Night Celebration</div>\r\n  <h1 class=\"big fonted\">NeoViolence\r\n  <br>25th May 2013\r\n  <br>[Kokpit](http://kokpitkafe.tumblr.com/)</h1>"
+            "content": "<img src='/public/poster.png' style='display:none;'><div class=\"chead\">Rooftop Party<br>Day'n'Night Celebration</div>\r\n  <h1 class=\"big fonted\">NeoViolence\r\n  <br>25th May 2013\r\n  <br>[Kokpit](http://kokpitkafe.tumblr.com/)</h1>"
         },
         {
             "name": "line-up",
@@ -50,7 +58,7 @@
             "name": "info",
             "header": "Line-up",
             "footer": "Partners",
-            "footer_cz": "Partne&#345;i",
+            "footer_cz": "Partneři",
             "view": "twocolumn",
             "view_data": {
                 "left": "<hr>Čtvrté výročí sice nejsou žádné kulatiny, ale jelikož minulý rok se vůbec neslavilo, rozhodli jsme se to tentokrát krapet dohnat. A proto jsme se spojily s několika českými promotéry, abychom Vám společně připravili pestrý a extra prodloužený mejdan v neotřelém prostoru Kokpit Kafe. Přichystaný bude skvělý zvuk, rozmanité dj sety a spousta vychytávek pro Váš komfort a skvělý zážitek z party s přátelskou atmosférou a to jak uvnitř tak i venku - na střeše!<hr>Na pomoc jsme si přizvali několik zpřátelených promotéru, jelikož vicero hlav více dokáže. Do spolupráce se zapojily Beef Rec., Endless Illusion, 142bpm a Funk'd Up z čehož následně vykrystalizoval i line-up:<hr>Denoir (Funk'd Up)\r\ndMIT.RY (Neo Violence)\r\nDscdrmr (142bpm)\r\nFatty M (Flow)\r\nLayup (Endless Illusion)\r\nSchwa (Beef Rec.)\r\nSupport by Milan Kroutil<hr>",
@@ -64,8 +72,8 @@
             "name_cz": "Partneři",
             "header": "Info",
             "footer": "Looking forward to your visit!",
-            "footer_cz": null,
-            "content": "<img src='/public/sponsors.png' />"
+            "footer_cz": "Těšíme se na Vaši návštěvu!",
+            "content": "<img src='/public/sponsors.png' alt='Sponsors'/>"
         }
     ]
 }

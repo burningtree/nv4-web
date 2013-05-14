@@ -2,12 +2,11 @@
 <html>
 <head>
 	<title><?= $this->data->title ?></title>
-  <link rel="stylesheet" type="text/css" href="/css/reset.css" charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="/css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" /> 
 	<link rel="stylesheet" type="text/css" href="/css/font/stylesheet.css" media="screen" /> 
   <link rel="icon" type="image/ico" href="/favicon.ico" />
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-  <script src="/js/jquery.parallax.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <meta name="description" content="<?= $this->data->description ?>" />
   <meta name="author" content="Jan Stránský <jan.stransky@arnal.cz>">
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -18,8 +17,8 @@
 </head>
 <body>
 
-<div id="mainframe" class="parallax-port">
-  <div class="bg parallax-layer">Loading..</div>
+<div id="mainframe">
+  <div class="bg"></div>
   <div class="nvlogo"></div>
 
 <?php

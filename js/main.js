@@ -2,6 +2,28 @@ var currentPage = 1;
 var borderHeight = $('.page .footer').height();
 var scrollBuffer = 0;
 var detecting = true;
+var player;
+
+function onPlayerStateChange(state){
+  if(state === 0){
+    scrollToPage(3 , true);    
+  }
+}
+
+function onYouTubePlayerReady() {
+  player = document.getElementById("videobox");
+
+  //console.log(player.getAvailableQualityLevels());
+  player.addEventListener('onStateChange', 'onPlayerStateChange');
+
+  if($(player).width() > 800){
+    player.setPlaybackQuality('hd720');
+  } 
+
+  if(window.location.hash == "#video" || window.location.hash == ""){
+    player.playVideo();
+  }
+};
 
 function isTouchDevice() {
   return !!('ontouchstart' in window) // works on most browsers 
@@ -17,7 +39,7 @@ function changePageHeight(){
     height = minimumHeight;
   }
 
-  console.log('window height: '+height);
+  //console.log('window height: '+height);
   //$('.bg').css({ backgroundSize: '2053px '+(height*(pagesCount-1))+'px' });
   $('.page').css({ height: height });
   $('.center').css({ height: height-(borderHeight*2) });
@@ -41,28 +63,39 @@ function scrollToPageOffset(offset, callback){
 
 function resolveScroll(){
     var scrollTop = $(window).scrollTop();
-    $('#mainframe > div.bg').css({ backgroundPosition: "center "+((scrollTop*0.5)+500)+"px" });
+    // konfigurace bg
+    var scrollTopOffset = 300; // 500 pri vice str
+    var scrollBgRatio = 0.3; // 0.5 pri vice str
+    $('#mainframe > div.bg').css({ backgroundPosition: "center "+((scrollTop*scrollBgRatio)+scrollTopOffset)+"px" });
 }
 
 function scrollToPage(page, animate, callback){
   var target = "#"+pagesMap[page];
   detecting = false;
 
+  if(player){
+    player.stopVideo();
+  }
+
   if($(target).size() > 0){
     var offset = $(target).offset().top;
-    console.log("Scrolling to page: "+page);
+    //console.log("Scrolling to page: "+page);
     if(animate){
       //$('#mainframe > .bg').trigger('freeze');
       detecting = false;
       //$('.footer.active, .header.active').addClass('shaded');
       $('html,body').animate({
         scrollTop: offset
-      }, 500, function(){
+      }, 1000, function(){
         //$('.footer.active, .header.active').removeClass('shaded');
         setTimeout(function(){ $('#mainframe > .bg').trigger('unfreeze').trigger('mousemove'); }, 1500);
         if(callback){ callback(); }
         setCurrentPage(page);
         detecting = true;
+
+        if(pagesMap[page] == "video" && player){
+          player.playVideo();
+        }
       });
     } else {
       $('html,body').scrollTop(offset);
@@ -85,7 +118,7 @@ function detectPage(set, move){
   var realUpdate = position/pageHeight;
   var updatePage = Math.round(realUpdate)+1;
   if(currentPage != updatePage){
-    console.log('Setting page to: '+updatePage);
+    //console.log('Setting page to: '+updatePage);
     currentPage = updatePage;
   }
   if(set){
@@ -121,7 +154,7 @@ $(document).ready(function(){
         dp = pi;
       }
     }
-    console.log(dp);
+    //console.log(dp);
     if(window.location.hash == ''){
       scrollToPage(dp, false, function(){
        // $('.footer.active, .header.active').animate({ opacity: 100 }, 2000);
@@ -135,7 +168,7 @@ $(document).ready(function(){
 
 
   $(window).resize(function(){
-    console.log('windows resized!');
+    //console.log('windows resized!');
     changePageHeight();
   });
 
@@ -154,12 +187,12 @@ $(document).ready(function(){
     if(e.keyCode == 40){ scrollToPageOffset(+1); return false; }
   });
   $('.header.active').bind('click',function(){ 
-    console.log('click!');
+    //console.log('click!');
     var page = parseInt($(this).parent().parent().attr('data-page'));
     scrollToPage(page-1, true);
   });
   $('.footer.active .next').bind('click',function(){
-    console.log('click!');
+    //console.log('click!');
     var page = parseInt($(this).parent().parent().parent().attr('data-page'));
     scrollToPage(page+1, true);
   });

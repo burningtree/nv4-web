@@ -86,7 +86,7 @@
         success: function(html){
           console.log('got data!');
           //console.log(html);
-          $('#registration.page .inner').html($('.inner:first', html).html());
+          $('#reservation.page .inner').html($('.inner:first', html).html());
         },
         dataType: 'html'
       });
