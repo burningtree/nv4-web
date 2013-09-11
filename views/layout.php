@@ -4,6 +4,7 @@
 	<title><?= $this->data->title ?></title>
   <link rel="stylesheet" type="text/css" href="/css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" /> 
+	<link rel="stylesheet" type="text/css" href="/css/custom.css" media="screen" /> 
 	<link rel="stylesheet" type="text/css" href="/css/font/stylesheet.css" media="screen" /> 
   <link rel="icon" type="image/ico" href="/favicon.ico" />
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -11,16 +12,18 @@
   <meta name="author" content="Jan Stránský <jan.stransky@arnal.cz>">
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta property="og:title" content="<?= $this->data->title ?>"/> 
-  <meta property="og:url" content="http://nv4.neoviolence.net"/> 
+  <meta property="og:url" content="<?= $this->data->url ?>"/> 
   <meta property="og:description" content="<?= $this->data->description ?>"/> 
-  <meta property="og:image" content="http://nv4.neoviolence.net/public/poster.png"/> 
+  <meta property="og:image" content="<?= $this->data->poster ?>"/> 
 </head>
 <body>
 
 <div id="mainframe">
   <div class="bg"></div>
   <div class="nvlogo"></div>
-  <div id="help" style="display:none;"><p><?= render_lang($this->lang, $this->data->help, $this->data->help_cz) ?></p></div>
+  <? if($this->data->help_enable == TRUE): ?>
+    <div id="help" style="display:none;"><p><?= render_lang($this->lang, $this->data->help, $this->data->help_cz) ?></p></div>
+  <? endif; ?>
 
 <?php
   switch($this->lang){
@@ -38,7 +41,7 @@
 
   <div class="lang">
     <a href="<?= $lang_url ?>#<?= $page_data->name ?>" onclick="document.location='<?=$lang_url?>'+document.location.hash; return false;"><?=$lang_name?></a>&nbsp;&nbsp;&nbsp;
-    <a href="http://www.facebook.com/events/142243002620793/"><?= render_lang($this->lang, $this->data->facebook_title, $this->data->facebook_title_cz)?></a>
+    <a href="<?= $this->data->facebook_url ?>"><?= render_lang($this->lang, $this->data->facebook_title, $this->data->facebook_title_cz)?></a>
   </div>
 
 <?
@@ -78,7 +81,7 @@ $i++;
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-23539695-3', 'neoviolence.net');
+  ga('create', '<?= $this->data->ganalytics_code ?>', '<?= $this->data->ganalytics_domain ?>');
   ga('send', 'pageview');
 
 </script>

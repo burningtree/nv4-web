@@ -64,7 +64,7 @@ function scrollToPageOffset(offset, callback){
 function resolveScroll(){
     var scrollTop = $(window).scrollTop();
     // konfigurace bg
-    var scrollTopOffset = 500; // 500 pri vice str
+    var scrollTopOffset = 0; // 500 pri vice str
     var scrollBgRatio = 0.4; // 0.5 pri vice str
     $('#mainframe > div.bg').css({ backgroundPosition: "center "+((scrollTop*scrollBgRatio)+scrollTopOffset)+"px" });
 }
@@ -148,7 +148,7 @@ $(document).ready(function(){
 
   setTimeout(function(){
 
-    var dp = "2";
+    var dp = "1"; // DEFAULT PAGE !!!!!
     for(pi in pagesMap){
       if(pagesMap[pi] == defaultPage){
         dp = pi;

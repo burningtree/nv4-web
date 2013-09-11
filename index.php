@@ -22,10 +22,11 @@ $all = array('form_send' => FALSE);
 if(isset($_POST['name']) && isset($_POST['email'])){
 
   $reg_data = array(
-    'Datum a cas' => date('j.m.Y H:i'),
+    'Web' => $data->title."\n",
     'Jmeno' => sanity($_POST['name']),
     'Email' => sanity($_POST['email']),
-    'Pocet listku' => sanity($_POST['tickets']),
+    'Pocet listku' => sanity($_POST['tickets'])."\n",
+    'Datum a cas' => date('j.m.Y H:i'),
     'IP adresa' => $_SERVER['REMOTE_ADDR'],
     'Usergent' => $_SERVER['HTTP_USER_AGENT'],
   );
@@ -34,7 +35,7 @@ if(isset($_POST['name']) && isset($_POST['email'])){
   {
     $data_arr[] = "$k: $v";
   }
-  mail($reg_email, '[neoviolence] registrace - '.$_POST['name'], join("\n", $data_arr), "From: registrace@neoviolence.com\r\n");
+  mail($reg_email, '['.$data->title.'] registrace - '.$_POST['name'], join("\n", $data_arr), "From: registrace@neoviolence.com\r\n");
   $all['form_send'] = TRUE;
 }
 

@@ -1,27 +1,33 @@
 {
-    "default_page": "video",
+    "ganalytics_code": "UA-23539695-3",
+    "ganalytics_domain": "neoviolence.net",
+    "url": "http://av.neoviolence.net",
+    "default_page": "reservation",
     "reg_email": "dmitrij.malysev@gmail.com",
-    "title": "NeoViolence 4th Anniversary 25th May 2013 - Kokpit",
-    "footlinks": "reservation, video, start, line-up, info, partners",
-    "description": "Párty přes den venku na střeše a večer v klubu.  DJs: Schwa (Beef Rec.; BE AT) Milan Kroutil (La Bella Vida) Layup (Endless Illusion) Fatty M (Flow) Dscdrmr (142bpm) dMIT.RY (Neo Violence) Denoir (Funk'd Up) Více info brzy - zatím zvi kámoše!",
+    "title": "A/V Jatka @ MeetFactory",
+    "poster": "/public/poster.png",
+    "footlinks": "reservation",
+    "description": "Další ze série společných mejdanů od NEO VIOLENCE, BEEF records a Endless Illusion je tady!",
+    "facebook_url": "https://www.facebook.com/events/424032201051694/",
     "facebook_title": "Facebook event",
     "facebook_title_cz": "Facebook událost",
     "help": "You can navigate using arrow keys &#9650; &#9660;",
     "help_cz": "K navigaci můžete použít klávesy šipek &#9650; &#9660;",
+    "help_enable": false,
     "pages": [
         {
             "name": "reservation",
             "name_cz": "rezervace",
             "header": "Please note that we have limited capacity",
             "header_cz": "Kapacita je omezená",
-            "footer": "Video",
-            "footer_cz": "Video",
+            "footer": "NEO VIOLENCE, BEEF records a Endless Illusion",
+            "footer_cz": "NEO VIOLENCE, BEEF records a Endless Illusion",
             "view": "form",
             "view_data": {
                 "congrats": "Thanks for reservation!",
                 "congrats_cz": "Děkujeme za rezervaci!",
                 "register_another": "Reserve more tickets",
-                "register_another_cz": "Koupit víc lupenů",
+                "register_another_cz": "Rezervovat víc lupenů",
                 "name": "Name",
                 "name_cz": "Jméno",
                 "email": "E-mail",
@@ -32,50 +38,6 @@
                 "send_now": "Send now",
                 "send_now_cz": "Odeslat"
             }
-        },
-        {
-            "name": "video",
-            "header": "Reservation",
-            "header_cz": "Rezervace",
-            "footer": "Start",
-            "view": "video"
-        },
-        {
-            "name": "start",
-            "header": "Video",
-            "header_cz": "Video",
-            "footer": "Line-up",
-            "content": "<img src='/public/poster.png' style='display:none;'><div class=\"chead\">Rooftop Party<br>Day'n'Night Celebration</div>\r\n  <h1 class=\"big fonted\">NeoViolence\r\n  <br>25th May 2013\r\n  <br>[Kokpit](http://kokpitkafe.tumblr.com/)</h1>"
-        },
-        {
-            "name": "line-up",
-            "header": "Start",
-            "footer": "Info",
-            "view": "djs",
-            "view_data": {
-                "djs": "[Dscdrmr](https://www.facebook.com/djdscdrmr); [Fatty M](https://soundcloud.com/fatty-m) ;[Dmit.ry](https://www.facebook.com/dj.dmit.ry);[Layup](https://www.facebook.com/layup84);[Denoir](https://www.facebook.com/djdenoir);[Milan Kroutil](http://official.fm/milankroutil);[Schwa](https://www.facebook.com/djschwabeef)"
-            }
-        },
-        {
-            "name": "info",
-            "header": "Line-up",
-            "footer": "Partners",
-            "footer_cz": "Partneři",
-            "view": "twocolumn",
-            "view_data": {
-                "left": "<hr>Čtvrté výročí sice nejsou žádné kulatiny, ale jelikož minulý rok se vůbec neslavilo, rozhodli jsme se to tentokrát krapet dohnat. A proto jsme se spojily s několika českými promotéry, abychom Vám společně připravili pestrý a extra prodloužený mejdan v neotřelém prostoru Kokpit Kafe. Přichystaný bude skvělý zvuk, rozmanité dj sety a spousta vychytávek pro Váš komfort a skvělý zážitek z party s přátelskou atmosférou a to jak uvnitř tak i venku - na střeše!<hr>Na pomoc jsme si přizvali několik zpřátelených promotéru, jelikož vicero hlav více dokáže. Do spolupráce se zapojily Beef Rec., Endless Illusion, 142bpm a Funk'd Up z čehož následně vykrystalizoval i line-up:<hr>Denoir (Funk'd Up)\r\ndMIT.RY (Neo Violence)\r\nDscdrmr (142bpm)\r\nFatty M (Flow)\r\nLayup (Endless Illusion)\r\nSchwa (Beef Rec.)\r\nSupport by Milan Kroutil<hr>",
-                "left_cz": "<hr>Čtvrté výročí sice nejsou žádné kulatiny, ale jelikož minulý rok se vůbec neslavilo, rozhodli jsme se to tentokrát krapet dohnat. A proto jsme se spojily s několika českými promotéry, abychom Vám společně připravili pestrý a extra prodloužený mejdan v neotřelém prostoru Kokpit Kafe. Přichystaný bude skvělý zvuk, rozmanité dj sety a spousta vychytávek pro Váš komfort a skvělý zážitek z party s přátelskou atmosférou a to jak uvnitř tak i venku - na střeše!<hr>Na pomoc jsme si přizvali několik zpřátelených promotéru, jelikož vicero hlav více dokáže. Do spolupráce se zapojily Beef Rec., Endless Illusion, 142bpm a Funk'd Up z čehož následně vykrystalizoval i line-up:<hr>Denoir (Funk'd Up)\r\ndMIT.RY (Neo Violence)\r\nDscdrmr (142bpm)\r\nFatty M (Flow)\r\nLayup (Endless Illusion)\r\nSchwa (Beef Rec.)\r\nSupport by Milan Kroutil<hr>",
-                "right": "<hr>Samotná party začne brzy odpoledne na verandě Kokpitu, kde si budete moci v klidu a pohodě dát drink, něco malého k jídlu a vychutnávat si pomalé deep house a disco beaty při výhledu na Prahu. Večer se celý mejdan přesune do vnitřních prostor, kde na Vás budou čekat skvělé vizualizace od brněnských XIIIXIII a samozřejmě i hudba se přesune do rychlejších a temnějších vod house, techna a bass music. To vše na špičkovém zvuku Funktion One.<hr>Vstupné bude rozděleno do několika kategorií:\r\nDen - 50,-\r\nNoc - 100,- do 23:00 / 150,- po 23:00\r\nE-mail registrace přes NEOVIOLENCE.NET - 100,- combo<hr>Na obě části bude platit striktně limitovaná kapacita (pro Váš komfort i bezpečí):\r\nDen / rooftop - 100 lidí\r\nVečer / indoor - 350 lidí\r\nProto doporučujeme, aby jste si Vaší vstupenku raději včas zaregistrovali, jinak nemůžeme zaručit, že se na party dostanete.<hr>",
-                "right_cz": "<hr>Samotná party začne brzy odpoledne na verandě Kokpitu, kde si budete moci v klidu a pohodě dát drink, něco malého k jídlu a vychutnávat si pomalé deep house a disco beaty při výhledu na Prahu. Večer se celý mejdan přesune do vnitřních prostor, kde na Vás budou čekat skvělé vizualizace od brněnských XIIIXIII a samozřejmě i hudba se přesune do rychlejších a temnějších vod house, techna a bass music. To vše na špičkovém zvuku Funktion One.<hr>Vstupné bude rozděleno do několika kategorií:\r\nDen - 50,-\r\nNoc - 100,- do 23:00 / 150,- po 23:00\r\nE-mail registrace přes NEOVIOLENCE.NET - 100,- combo<hr>Na obě části bude platit striktně limitovaná kapacita (pro Váš komfort i bezpečí):\r\nDen / rooftop - 100 lidí\r\nVečer / indoor - 350 lidí\r\nProto doporučujeme, aby jste si Vaší vstupenku raději včas zaregistrovali, jinak nemůžeme zaručit, že se na party dostanete.<hr>"
-            }
-        },
-        {
-            "name": "partners",
-            "name_cz": "Partneři",
-            "header": "Info",
-            "footer": "Looking forward to your visit!",
-            "footer_cz": "Těšíme se na Vaši návštěvu!",
-            "content": "<img src='/public/sponsors.png' alt='Sponsors'/>"
         }
     ]
 }
